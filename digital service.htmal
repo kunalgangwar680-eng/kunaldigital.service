@@ -1,0 +1,57 @@
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="portfolio">
+    <div class="card">
+      <h3>Google Ads Result</h3>
+      <p>Generated 120+ leads with optimized Google Ads.</p>
+      <img src="https://via.placeholder.com/400x250?text=Google+Ads+Report" alt="Google Ads Result" class="portfolio-img">
+    </div>
+    <div class="card">
+      <h3>Facebook Ad Design</h3>
+      <p>Creative posters & banners for brand promotions.</p>
+      <img src="https://via.placeholder.com/400x250?text=Facebook+Ad+Poster" alt="Facebook Ad Design" class="portfolio-img">
+    </div>
+    <div class="card">
+      <h3>Instagram Campaign</h3>
+      <p>Boosted engagement by 200% with ad creatives.</p>
+      <img src="https://via.placeholder.com/400x250?text=Instagram+Campaign" alt="Instagram Campaign" class="portfolio-img">
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); text-align:center; justify-content:center; align-items:center;">
+  <img id="lightbox-img" src="" alt="Portfolio Image" style="max-width:90%; max-height:90%; margin-top:5%;">
+</div>
+
+<script>
+  // Portfolio Lightbox
+  const portfolioImgs = document.querySelectorAll(".portfolio-img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  portfolioImgs.forEach(img => {
+    img.style.cursor = "pointer";
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+    });
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+</script>
+
+<style>
+  .portfolio img {
+    margin-top:10px;
+    border-radius:10px;
+    width:100%;
+    transition:0.3s;
+  }
+  .portfolio img:hover {
+    transform:scale(1.05);
+    box-shadow:0 6px 16px rgba(0,0,0,0.3);
+  }
+</style>
